@@ -1,0 +1,131 @@
+{
+  pkgs,
+  lib,
+  ...
+}:
+{
+  config.vim = {
+    lsp = {
+      enable = true;
+      formatOnSave = false;
+    };
+
+    languages = {
+      enableFormat = true;
+      enableTreesitter = true;
+      nix.enable = true;
+
+      # TODO: pick up building meows from here
+      astro.enable = false;
+      nu.enable = false;
+      csharp.enable = false;
+      julia.enable = false;
+      vala.enable = false;
+      scala.enable = false;
+      r.enable = false;
+      gleam.enable = false;
+      dart.enable = false;
+      elixir.enable = false;
+      haskell.enable = true;
+      hcl.enable = false;
+      ruby.enable = false;
+      fsharp.enable = false;
+      just.enable = false;
+      qml.enable = false;
+      tailwind.enable = false;
+      svelte.enable = false;
+    };
+
+    debugMode = {
+      enable = false;
+      level = 16;
+      logFile = "/tmp/nvim.log";
+    };
+
+    projects.project-nvim.enable = true;
+
+    utility = {
+      surround = {
+        enable = true;
+        setupOpts = {
+          keymaps = {
+            visual = "s";
+            visual_line = "S";
+            normal = "ys";
+            delete = "ds";
+            change = "cs";
+          };
+        };
+      };
+      undotree.enable = true;
+    };
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<esc>";
+        action = "<cmd>noh<cr>";
+      }
+      {
+        mode = "i";
+        key = "<c-m>";
+        action = "meow ";
+        desc = "meow, but super fast";
+      }
+    ];
+
+    extraLuaFiles = [
+      # (builtins.path {
+      #   path = ./meow-lib/lua/ultimeow.lua;
+      #   name = "ultimeow";
+      # })
+      # (builtins.path {
+      #   path = ./meow-lib/lua/conf.lua;
+      #   name = "conf";
+      # })
+      (builtins.path {
+        path = ./meow-lib/meows/lua/snippets.lua;
+        name = "snippets";
+      })
+    ];
+
+    lazy.plugins = {
+      # FIXME: the command doesn't load here for some reason
+      # "vimplugin-yop.nvim" = {
+      #   package = pkgs.vimUtils.buildVimPlugin {
+      #     name = "yop.nvim";
+      #     src = pkgs.fetchFromGitHub {
+      #       owner = "zdcthomas";
+      #       repo = "yop.nvim";
+      #       rev = "ec26d86cfa96783f6894babcc509e5287aef9a25";
+      #       sha256 = "sha256-DMsrHINiW4Ga3K7JuG3s84KJl2ufkLtRJrM8C1NmbHM=";
+      #     };
+      #   };
+      #   lazy = false;
+      #   after = "print('loaded yop')";
+      #   event = [ "VimEnter" ];
+      # };
+      # "eyeliner.nvim" = {
+      #   package = pkgs.vimPlugins.eyeliner-nvim;
+      #   lazy = true;
+      #   event = [ "BufEnter" ];
+      #   setupOpts = {
+      #     highlight_on_key = true;
+      #   };
+      # };
+    };
+
+    options = ./meow-lib/nix/vim-settings.nix;
+
+    # TODO: -------- make modular system --------
+    # figure out how to make the syntax simple
+    # TODO: -------- repackaging --------
+    # configure luasnip -> need to add from_lua bindings
+    # TODO: -------- packaged but don't load... --------
+    # freeze - is not working
+    # portal - has no nix package
+    # eyeliner - config opts not quite right (remove?)
+    # yop (for meowing) - plugin loading/path doesn't currently work
+    # TODO: -------- configuring --------
+  };
+}

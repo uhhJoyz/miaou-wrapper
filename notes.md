@@ -1,0 +1,16 @@
+Changes:
+1. Fixed bug with conform formatting by changing \<leader\>lf binding
+    - Need to double check this binding will only be enforced when conform is enabled
+2. Updated Telescope Keybinds, added themes
+3. Packaged:
+    - clever-f
+    - targets-vim
+    - portal
+    - bim
+    - freeze
+    - tabout
+
+TODO:
+    - implement 'cic' for change in curlies
+    - remove {} from 'cib'
+    - enable session manager

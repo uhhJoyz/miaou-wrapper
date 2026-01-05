@@ -1,0 +1,33 @@
+{
+  number = true;
+  relativenumber = true;
+  expandtab = true;
+  shiftwidth = 2;
+  tabstop = 2;
+  signcolumn = "no";
+  fillchars = "eob: ";
+  sidescroll = 1;
+  sidescrolloff = 12;
+  cmdheight = 0;
+  shiftround = true;
+  ignorecase = true;
+  smartcase = true;
+  hlsearch = true;
+  autoread = true;
+  whichwrap = "<,>,[,]";
+  hidden = true;
+  mousemodel = "extend";
+  backup = false;
+  writebackup = false;
+  swapfile = false;
+  timeoutlen = 500;
+  splitbelow = true;
+  splitright = true;
+  termguicolors = true;
+  pumheight = 16;
+  showtabline = 2;
+  showmode = false;
+  nrformats = "bin,hex,alpha";
+  clipboard = "unnamedplus";
+  mouse = "a";
+}
