@@ -11,7 +11,7 @@
       nvf,
       ...
     }@inputs:
-    let 
+    let
       system = import ./sys.nix;
       meows = import ./meows.nix;
     in
