@@ -9,11 +9,20 @@
       self,
       nixpkgs,
       nvf,
-      system,
-      meows,
       ...
     }@inputs:
+    let 
+      system = import ./sys.nix;
+      meows = import ./meows.nix;
+    in
     {
+      miaou_config =
+        system: meows:
+        (inputs.nvf.lib.neovimConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+
+          modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") meows;
+        }).neovim;
       packages.${system} = {
         pkgs = nixpkgs.legacyPackages.${system};
         default =
