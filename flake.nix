@@ -12,24 +12,24 @@
       ...
     }@inputs:
     let
-      system = import ./sys.nix;
-      meows = import ./meows.nix;
+      sys = import ./sys.nix;
+      m = import ./meows.nix;
     in
     {
-      lib.miaou_config =
-        system: meows:
+      miaou_config =
+        { system, meows }:
         (inputs.nvf.lib.neovimConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
 
           modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") meows;
-        }).neovim;
-      packages.${system} = {
-        pkgs = nixpkgs.legacyPackages.${system};
+        });
+      packages.${sys} = {
+        pkgs = nixpkgs.legacyPackages.${sys};
         default =
           (inputs.nvf.lib.neovimConfiguration {
-            pkgs = nixpkgs.legacyPackages.${system};
+            pkgs = nixpkgs.legacyPackages.${sys};
 
-            modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") meows;
+            modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") m;
           }).neovim;
       };
     };
