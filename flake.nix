@@ -16,7 +16,7 @@
       meows = import ./meows.nix;
     in
     {
-      miaou_config =
+      lib.miaou_config =
         system: meows:
         (inputs.nvf.lib.neovimConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
