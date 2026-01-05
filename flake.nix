@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nvf.url = "./meowvf";
+    nvf.url = "github:uhhJoyz/meowvf";
   };
 
   outputs =

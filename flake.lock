@@ -115,14 +115,18 @@
         "systems": "systems"
       },
       "locked": {
-        "path": "./meowvf",
-        "type": "path"
+        "lastModified": 1767581664,
+        "narHash": "sha256-ugzOCWxQY4ncmgRsFIWIZTPrMUrsVggkDlv1M6QWnPM=",
+        "owner": "uhhJoyz",
+        "repo": "meowvf",
+        "rev": "285ee0b64c0a1b7c5cdc457736fac384e2849cfa",
+        "type": "github"
       },
       "original": {
-        "path": "./meowvf",
-        "type": "path"
-      },
-      "parent": []
+        "owner": "uhhJoyz",
+        "repo": "meowvf",
+        "type": "github"
+      }
     },
     "root": {
       "inputs": {
