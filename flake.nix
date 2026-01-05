@@ -9,12 +9,10 @@
       self,
       nixpkgs,
       nvf,
+      system,
+      meows,
       ...
     }@inputs:
-    let
-      system = import ./sys.nix;
-      meows = import ./meows.nix;
-    in
     {
       packages.${system} = {
         pkgs = nixpkgs.legacyPackages.${system};
