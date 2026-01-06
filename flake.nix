@@ -49,7 +49,6 @@
               pkgs = nixpkgs.legacyPackages.${system};
               modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") meows;
             });
-
         };
     };
 }
