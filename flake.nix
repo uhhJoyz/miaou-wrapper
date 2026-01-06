@@ -43,7 +43,7 @@
               }).neovim;
           };
 
-          lib.miaouCustom =
+          miaouCustom =
             { meows }:
             (inputs.nvf.lib.neovimConfiguration {
               pkgs = nixpkgs.legacyPackages.${system};
