@@ -21,9 +21,9 @@
       flake = {
         lib = {
           miaouCustom =
-            { meows, pkgs }:
+            { meows, system }:
             (inputs.nvf.lib.neovimConfiguration {
-              inherit pkgs;
+              pkgs = nixpkgs.legacyPackages.${system};
               modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") meows;
             }).neovim;
         };
