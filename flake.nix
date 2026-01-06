@@ -1,36 +1,55 @@
 {
   inputs = {
+    flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nvf.url = "github:uhhJoyz/meowvf";
   };
 
   outputs =
-    {
+    inputs@{
       self,
+      flake-parts,
       nixpkgs,
       nvf,
-      ...
-    }@inputs:
-    let
-      sys = import ./sys.nix;
-      m = import ./meows.nix;
-    in
-    {
-      miaou_config =
-        { system, meows }:
-        (inputs.nvf.lib.neovimConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
+    }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
+      perSystem =
+        let
+          default-meows = import ./meows.nix;
+        in
+        {
+          config,
+          self',
+          inputs',
+          pkgs,
+          system,
+          ...
+        }:
+        {
+          packages = {
+            default =
+              (inputs.nvf.lib.neovimConfiguration {
+                pkgs = nixpkgs.legacyPackages.${system};
 
-          modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") meows;
-        });
-      packages.${sys} = {
-        pkgs = nixpkgs.legacyPackages.${sys};
-        default =
-          (inputs.nvf.lib.neovimConfiguration {
-            pkgs = nixpkgs.legacyPackages.${sys};
+                modules = [
+                  ./meow/defaults.nix
+                ]
+                ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") default-meows;
+              }).neovim;
+          };
 
-            modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") m;
-          }).neovim;
-      };
+          lib.miaouCustom =
+            { meows }:
+            (inputs.nvf.lib.neovimConfiguration {
+              pkgs = nixpkgs.legacyPackages.${system};
+              modules = [ ./meow/defaults.nix ] ++ builtins.map (x: ./meow/meow-lib/meows + x + ".nix") meows;
+            });
+
+        };
     };
 }
