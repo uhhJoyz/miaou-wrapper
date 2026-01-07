@@ -2,7 +2,7 @@ _: {
   config.vim = {
     treesitter.enable = true;
     treesitter.context = {
-      enable = true;
+      enable = false;
       setupOpts = {
         max_lines = 1;
         separator = null;
