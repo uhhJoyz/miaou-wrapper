@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*.typ" },
     callback = function()
-        local search_string = '$"\\(\\){}\\[\\]'
+        local search_string = '$"\\(\\){}\\[\\]*_'
             vim.api.nvim_buf_set_keymap(
                 vim.api.nvim_get_current_buf(),
                 "i",
