@@ -2,38 +2,50 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   config.vim.dashboard = {
     alpha = {
       enable = true;
       theme = null;
       layout = [
         {
-# alternate dashboard image:
-# ::::    ::::  :::   :::  ::::::::  :::       :::
-# +:+:+: :+:+:+ :+:   :+: :+:    :+: :+:       :+:
-# +:+ +:+:+ +:+  +:+ +:+  +:+    +:+ +:+       +:+
-# +#+  +:+  +#+   +#++:   +#+    +:+ +#+  +:+  +#+
-# +#+       +#+    +#+    +#+    +#+ +#+ +#+#+ +#+
-# #+#       #+#    #+#    #+#    #+#  #+#+# #+#+# 
-# ###       ###    ###     ########    ###   ###  
+          # alternate dashboard image:
+          # ::::    ::::  :::   :::  ::::::::  :::       :::
+          # +:+:+: :+:+:+ :+:   :+: :+:    :+: :+:       :+:
+          # +:+ +:+:+ +:+  +:+ +:+  +:+    +:+ +:+       +:+
+          # +#+  +:+  +#+   +#++:   +#+    +:+ +#+  +:+  +#+
+          # +#+       +#+    +#+    +#+    +#+ +#+ +#+#+ +#+
+          # #+#       #+#    #+#    #+#    #+#  #+#+# #+#+#
+          # ###       ###    ###     ########    ###   ###
           type = "text";
           val = [
             ""
             ""
             ""
-            "<-. (`-')                             .->   "
-            "   \(OO )_      .->        .->    (`(`-')/`)"
-            ",--./  ,-.) ,--.'  ,-.(`-')----. ,-`( OO).',"
-            "|   `.'   |(`-')'.'  /( OO).-.  '|  |\  |  |"
-            "|  |'.'|  |(OO \    / ( _) | |  ||  | '.|  |"
-            "|  |   |  | |  /   /)  \|  |)|  ||  |.'.|  |"
-            "|  |   |  | `-/   /`    '  '-'  '|   ,'.   |"
-            "`--'   `--'   `--'       `-----' `--'   '--'"
+            "           __                                            "
+            "  ___ ___ /\\_\\     __   __  __     __      ___   __  __  "
+            "/' __` __`\\/\\ \\  /'__`\\/\\ \\/\\ \\  /'__`\\   / __`\\/\\ \\/\\ \\ "
+            "/\\ \\/\\ \\/\\ \\ \\ \\/\\  __/\\ \\ \\_\\ \\/\\ \\L\\.\\_/\\ \\L\\ \\ \\ \\_\\ \\"
+            "\\ \\_\\ \\_\\ \\_\\ \\_\\ \\____\\\\/`____ \\ \\__/.\\_\\ \\____/\\ \\____/"
+            " \\/_/\\/_/\\/_/\\/_/\\/____/ `/___/> \\/__/\\/_/\\/___/  \\/___/ "
+            "                            /\\___/                       "
+            "                            \\/__/                        "
             ""
             ""
             ""
+            # ""
+            # ""
+            # ""
+            # "<-. (`-')                             .->   "
+            # "   \(OO )_      .->        .->    (`(`-')/`)"
+            # ",--./  ,-.) ,--.'  ,-.(`-')----. ,-`( OO).',"
+            # "|   `.'   |(`-')'.'  /( OO).-.  '|  |\  |  |"
+            # "|  |'.'|  |(OO \    / ( _) | |  ||  | '.|  |"
+            # "|  |   |  | |  /   /)  \|  |)|  ||  |.'.|  |"
+            # "|  |   |  | `-/   /`    '  '-'  '|   ,'.   |"
+            # "`--'   `--'   `--'       `-----' `--'   '--'"
+            # ""
+            # ""
           ];
           opts = {
             hl = "Title";
@@ -42,7 +54,7 @@
         }
         {
           type = "text";
-          val = [ "Welcome back to myow, we hope you'll enjoy your stay!" ];
+          val = ["Welcome back to myow, we hope you'll enjoy your stay!"];
           opts = {
             hl = "ActionPreviewTitle";
             position = "center";
@@ -68,7 +80,7 @@
         }
         {
           type = "text";
-          val = [ "Be sure to check out NVF, the configuration tool upon which this distribution is built." ];
+          val = ["Be sure to check out NVF, the configuration tool upon which this distribution is built."];
           opts = {
             hl = "Comment";
             position = "center";
@@ -90,7 +102,7 @@
         }
         {
           type = "text";
-          val = [ "donate to help children in Gaza." ];
+          val = ["donate to help children in Gaza."];
           opts = {
             hl = "AlphaFooter";
             position = "center";
@@ -98,7 +110,7 @@
         }
         {
           type = "text";
-          val = [ "https://support.savethechildren.org/" ];
+          val = ["https://support.savethechildren.org/"];
           opts = {
             hl = "AlphaShortcut";
             position = "center";
