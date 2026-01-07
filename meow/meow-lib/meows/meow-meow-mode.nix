@@ -10,7 +10,20 @@
         desc = "Certifiable meow moment.";
         silent = true;
       }
-
+      {
+        mode = "n";
+        key = "j";
+        action = "gj";
+        desc = "Easier line navigation for meow-meows.";
+        silent = true;
+      }
+      {
+        mode = "n";
+        key = "k";
+        action = "gk";
+        desc = "Easier line navigation for meow-meows.";
+        silent = true;
+      }
     ];
 
     extraLuaFiles = [
