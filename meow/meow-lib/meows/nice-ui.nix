@@ -2,9 +2,9 @@ _: {
   config.vim = {
     treesitter.enable = true;
     treesitter.context = {
-      enable = false;
+      enable = true;
       setupOpts = {
-        max_lines = 1;
+        max_lines = 2;
         separator = null;
       };
     };
@@ -86,9 +86,9 @@ _: {
           ];
         };
       };
-      breadcrumbs = {
-        enable = true;
-      };
+      # breadcrumbs = {
+      #   enable = true;
+      # };
       fastaction.enable = true;
     };
   };
