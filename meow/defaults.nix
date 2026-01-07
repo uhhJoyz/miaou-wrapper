@@ -63,6 +63,12 @@
     keymaps = [
       {
         mode = "n";
+        key = "<leader>ut";
+        action = "<cmd>UndotreeToggle<cr>";
+        desc = "Toggles the undo tree.";
+      }
+      {
+        mode = "n";
         key = "<esc>";
         action = "<cmd>noh<cr>";
       }
@@ -75,14 +81,6 @@
     ];
 
     extraLuaFiles = [
-      # (builtins.path {
-      #   path = ./meow-lib/lua/ultimeow.lua;
-      #   name = "ultimeow";
-      # })
-      # (builtins.path {
-      #   path = ./meow-lib/lua/conf.lua;
-      #   name = "conf";
-      # })
       (builtins.path {
         path = ./meow-lib/meows/lua/snippets.lua;
         name = "snippets";
@@ -116,16 +114,5 @@
     };
 
     options = ./meow-lib/nix/vim-settings.nix;
-
-    # TODO: -------- make modular system --------
-    # figure out how to make the syntax simple
-    # TODO: -------- repackaging --------
-    # configure luasnip -> need to add from_lua bindings
-    # TODO: -------- packaged but don't load... --------
-    # freeze - is not working
-    # portal - has no nix package
-    # eyeliner - config opts not quite right (remove?)
-    # yop (for meowing) - plugin loading/path doesn't currently work
-    # TODO: -------- configuring --------
   };
 }
