@@ -13,7 +13,17 @@
       package = pkgs.vimPlugins.snacks-nvim;
       lazy = false;
       cmd = ["VimEnter"];
-      setupOpts = {};
+      setupOpts = {
+        profiler = {};
+      };
+      keys = [
+        {
+          mode = "n";
+          key = "<leader>pp";
+          action = "<cmd>lua require('snacks').profiler.toggle()";
+          desc = "toggle profiler (opens details on stop)";
+        }
+      ];
     };
 
     languages = {
