@@ -20,7 +20,7 @@
         {
           mode = "n";
           key = "<leader>pp";
-          action = "<cmd>lua require('snacks').profiler.toggle()";
+          action = "<cmd>lua require('snacks').profiler.toggle()<cr>";
           desc = "toggle profiler (opens details on stop)";
         }
       ];
