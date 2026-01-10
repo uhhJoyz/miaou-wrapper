@@ -17,3 +17,6 @@ TODO:
     - configure luasnip to work properly with adding from lua bindings
     - package yop (for meowing and window resizing) 
         - plugin loading/path doesn't currently work
+    - package garbage-day.nvim (garbage collection for LSPs)
+    - add typst compile binding
+    - figure out what's wrong with power consumption

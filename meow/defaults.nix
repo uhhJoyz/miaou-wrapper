@@ -10,6 +10,14 @@
       formatOnSave = false;
     };
 
+
+  vim.lazy.plugins."snacks.nvim" = {
+    package = pkgs.vimPlugins.snacks-nvim;
+    lazy = false;
+    cmd = ["VimEnter"];
+    setupOpts = {};
+  };
+
     languages = {
       enableFormat = true;
       enableTreesitter = true;
