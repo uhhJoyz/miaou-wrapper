@@ -2,21 +2,19 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   config.vim = {
     lsp = {
       enable = true;
       formatOnSave = false;
     };
 
-
-  vim.lazy.plugins."snacks.nvim" = {
-    package = pkgs.vimPlugins.snacks-nvim;
-    lazy = false;
-    cmd = ["VimEnter"];
-    setupOpts = {};
-  };
+    lazy.plugins."snacks.nvim" = {
+      package = pkgs.vimPlugins.snacks-nvim;
+      lazy = false;
+      cmd = ["VimEnter"];
+      setupOpts = {};
+    };
 
     languages = {
       enableFormat = true;
