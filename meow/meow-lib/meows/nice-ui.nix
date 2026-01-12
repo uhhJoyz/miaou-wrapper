@@ -61,7 +61,7 @@ _: {
 
     statusline = {
       lualine = {
-        enable = false;
+        enable = true;
         theme = "catppuccin";
       };
     };
