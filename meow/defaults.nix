@@ -74,6 +74,7 @@
         };
       };
       undotree.enable = true;
+      lean.enable = true;
     };
 
     keymaps = [
@@ -96,13 +97,6 @@
       }
     ];
 
-    extraLuaFiles = [
-      (builtins.path {
-        path = ./meow-lib/meows/lua/snippets.lua;
-        name = "snippets";
-      })
-    ];
-
     lazy.plugins = {
       # FIXME: the command doesn't load here for some reason
       # "vimplugin-yop.nvim" = {
@@ -119,6 +113,7 @@
       #   after = "print('loaded yop')";
       #   event = [ "VimEnter" ];
       # };
+      # FIXME: eyeliner has visual issues
       # "eyeliner.nvim" = {
       #   package = pkgs.vimPlugins.eyeliner-nvim;
       #   lazy = true;

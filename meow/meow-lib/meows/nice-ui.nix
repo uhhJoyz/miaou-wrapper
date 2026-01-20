@@ -59,13 +59,6 @@ _: {
       indent-blankline.enable = true;
     };
 
-    statusline = {
-      lualine = {
-        enable = false;
-        theme = "catppuccin";
-      };
-    };
-
     utility.nvim-biscuits.enable = true;
 
     notes.todo-comments.enable = true;

@@ -148,11 +148,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1767581664,
-        "narHash": "sha256-ugzOCWxQY4ncmgRsFIWIZTPrMUrsVggkDlv1M6QWnPM=",
+        "lastModified": 1768529071,
+        "narHash": "sha256-mTc+AHikTVhADNi4B6pb3C+Lh1dk1TW/Cn0dS4NWYac=",
         "owner": "uhhJoyz",
         "repo": "meowvf",
-        "rev": "285ee0b64c0a1b7c5cdc457736fac384e2849cfa",
+        "rev": "2f41c8c6cb8bbd9e5014f21901d939256b8dff42",
         "type": "github"
       },
       "original": {
