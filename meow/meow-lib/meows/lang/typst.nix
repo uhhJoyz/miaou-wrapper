@@ -1,6 +1,14 @@
 _: {
   config.vim = {
+# add_key({ "<leader>tyc", "<Cmd>TypstCompile<CR>", desc = "stop following cursor in typst preview", silent = true })
+
     keymaps = [
+      {
+        mode = "n";
+        key = "<leader>tyc";
+        action = "<cmd>TypstCompile<cr>";
+        desc = "Compile the currently open Typst file.";
+      }
       {
         mode = "n";
         key = "<leader>typ";
@@ -14,6 +22,14 @@ _: {
         desc = "Force an update on the currently active Typst Preview. [typst-preview]";
       }
     ];
+
+    extraLuaFiles = [
+      (builtins.path {
+        path = ../lua/typst-compile.lua;
+        name = "typst-compile";
+      })
+    ];
+
     languages.typst.enable = true;
   };
 }
