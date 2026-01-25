@@ -1,7 +1,7 @@
 {pkgs, lib, ...}: {
   config.vim = {
     autocomplete.blink-cmp.enable = lib.mkForce false;
-    ui.smartcolumn.enable = false;
+    ui.smartcolumn.enable = lib.mkForce false;
 
     keymaps = [
       {
