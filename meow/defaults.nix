@@ -95,6 +95,24 @@
         action = "meow ";
         desc = "meow, but super fast";
       }
+      {
+        mode = "n";
+        key = "gs";
+        action = "^";
+        desc = "go to beginning of line after whitespace";
+      }
+      {
+        mode = "n";
+        key = "gh";
+        action = "0";
+        desc = "go to beginning of line";
+      }
+      {
+        mode = "n";
+        key = "gl";
+        action = "$";
+        desc = "go to end of line";
+      }
     ];
 
     lazy.plugins = {
