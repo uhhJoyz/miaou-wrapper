@@ -12,6 +12,7 @@
   /file-browsing # the power of the system at your fingertips
   /autocenter # it's like the buffer revolves around you
   /spellcheck # me monkey, machine do grammar
+  /extra-motions # your fingers will be right at home
   /glass-ui # 🫥
 
   # -------- navigation --------

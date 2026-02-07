@@ -1,4 +1,4 @@
-_: {
+{pkgs, ...}: {
   config.vim = {
     # keymaps = [
     #   {
@@ -27,5 +27,6 @@ _: {
         };
       };
     };
+    extraPackages = [pkgs.yazi];
   };
 }
