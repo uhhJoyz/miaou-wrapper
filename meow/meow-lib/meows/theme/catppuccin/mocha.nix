@@ -3,8 +3,8 @@
   config.vim = {
     theme = {
       enable = true;
-      name = lib.mkDefault "catppuccin";
-      style = lib.mkDefault "mocha";
+      name = lib.mkForce "catppuccin";
+      style = lib.mkForce "mocha";
     };
   };
 }
