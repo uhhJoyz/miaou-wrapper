@@ -36,7 +36,11 @@
   /ultimeow # your very own supermeowers
 
   # -------- themes --------
+  # disable any theme that you do not want to be the 
+  # active theme. uncommenting more than one has
+  # undefined behavior
   /theme/catppuccin/mocha
+  /theme/oxocarbon
 
   # -------- language support --------
   # nix is enabled by default to support this configuration

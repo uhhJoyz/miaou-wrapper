@@ -3,7 +3,7 @@ _: {
     config.vim.statusline = {
       lualine = {
         enable = true;
-        theme = "catppuccin";
+        theme = "auto";
       };
     };
 }
