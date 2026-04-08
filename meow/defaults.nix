@@ -4,6 +4,8 @@
   ...
 }: {
   config.vim = {
+    enableLuaLoader = true;
+
     lsp = {
       enable = true;
       formatOnSave = false;
