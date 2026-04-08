@@ -40,7 +40,7 @@
   # active theme. uncommenting more than one has
   # undefined behavior
   /theme/catppuccin/mocha
-  /theme/oxocarbon
+  # /theme/oxocarbon
 
   # -------- language support --------
   # nix is enabled by default to support this configuration
