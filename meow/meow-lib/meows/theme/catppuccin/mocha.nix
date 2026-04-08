@@ -2,7 +2,7 @@
 {
   config.vim = {
     theme = {
-      enable = lib.mkDefault true;
+      enable = true;
       name = lib.mkDefault "catppuccin";
       style = lib.mkDefault "mocha";
     };
